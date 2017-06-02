@@ -5,7 +5,7 @@
 <link rel="import" href="../paper-input/paper-input-container.html">
 <link rel="import" href="../paper-input/paper-input-error.html">
 <link rel="import" href="../paper-input/paper-input.html">
-<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../paper-listbox/paper-listbox.html">
 <link rel="import" href="../paper-item/paper-item.html">
 <link rel="import" href="../paper-item/paper-icon-item.html">
 <link rel="import" href="../paper-item/paper-item-body.html">
@@ -220,7 +220,7 @@ Example:
       <input is="iron-input" type="hidden" class="paper-input-input" bind-value="{{hiddenValue}}">
 
       <div class="prefix-container" prefix>
-        <content select="[prefix]"></content>
+        <slot name="[prefix]"></slot>
       </div>
 
       <label hidden$="[[!label]]">[[label]]</label>
@@ -249,7 +249,7 @@ Example:
     </div>
 
     <div class="suffix-container" suffix>
-      <content select="[suffix]"></content>
+      <slot name="[suffix]"></slot>
     </div>
 
     <template is="dom-if" if="[[errorMessage]]">
@@ -259,7 +259,7 @@ Example:
   <paper-material id="suggestionsPanel" elevation="3" class="autocomplete-suggestion-container" animated="[[animated]]">
     <template is="dom-if" if="{{_loading}}">
         <div id="loading">
-          <content select="[loading]"></content>
+          <slot name="[loading]"></slot>
         </div>
       </template>
 
